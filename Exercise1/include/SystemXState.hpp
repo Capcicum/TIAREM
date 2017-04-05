@@ -9,6 +9,7 @@
 #define INCLUDE_SYSTEMXSTATE_HPP_
 
 #include <EmbeddedSystemX.hpp>
+#include <Singleton.hpp>
 
 class EmbeddedSystemX;
 

@@ -21,9 +21,9 @@ protected:
 	virtual ~Singleton() = default;
 
 public:
-	static T& get_instance() noexcept(std::is_nothrow_constructible<T>::value)
+	static T* get_instance() noexcept(std::is_nothrow_constructible<T>::value)
 	{
-		static T instance;
+		static T* instance = new T;
 
 		return instance;
 	}

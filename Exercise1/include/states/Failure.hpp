@@ -15,8 +15,11 @@ class Failure : public Singleton<Failure>, public SystemXState
 {
 	friend class Singleton<Failure>;
 public:
-	void Restart();
+	virtual void Restart();
+	virtual void Exit();
+	virtual void entry();
 private:
+	void display(int ErrorNo);
 };
 
 

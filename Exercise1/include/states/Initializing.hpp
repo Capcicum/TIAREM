@@ -8,7 +8,18 @@
 #ifndef INCLUDE_STATES_INITIALIZING_HPP_
 #define INCLUDE_STATES_INITIALIZING_HPP_
 
+#include <SystemXState.hpp>
 
+class Initializing : public Singleton<Initializing>, public SystemXState
+{
+	friend class Singleton<Initializing>;
+public:
+	virtual void Initialized();
+	virtual void entry();
+private:
+	void startInitializing();
+
+};
 
 
 

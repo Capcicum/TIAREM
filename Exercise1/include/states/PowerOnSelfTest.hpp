@@ -15,9 +15,9 @@ public:
 	virtual void SelftestFailed(EmbeddedSystemX* esx);
 	virtual void SelftestOK(EmbeddedSystemX* esx);
 
-	virtual void entry() {};
+	virtual void entry();
 
-	void systemSelftest() {};
+	void systemSelftest();
 
 private:
 

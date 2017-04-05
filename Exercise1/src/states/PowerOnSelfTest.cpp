@@ -6,10 +6,11 @@
  */
 
 #include<states/PowerOnSelfTest.hpp>
+#include<states/Failure.hpp>
 
 void PowerOnSelfTest::SelftestFailed(EmbeddedSystemX* esx)
 {
-	//ChangeState(esx, Failure::get_instance());
+	ChangeState(esx, Failure::get_instance());
 }
 
 void PowerOnSelfTest::SelftestOK(EmbeddedSystemX* esx)

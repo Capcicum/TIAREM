@@ -8,7 +8,16 @@
 #ifndef INCLUDE_STATES_SUSPENDED_HPP_
 #define INCLUDE_STATES_SUSPENDED_HPP_
 
+#include <SystemXState.hpp>
 
+class Suspended : public Singleton<Suspended>, public SystemXState
+{
+	friend class Singleton<Suspended>;
+public:
+	virtual void Stop();
+	virtual void Resume();
+	virtual void entry();
+};
 
 
 
