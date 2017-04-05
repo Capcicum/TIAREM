@@ -27,7 +27,7 @@ public:
 	void Start();
 	void Suspend();
 	void Resume();
-	void SelfTestFailed(int ErrorNo);
+	void SelftestFailed(int ErrorNo);
 	void ConfigX();
 	void chMode();
 	void eventX();

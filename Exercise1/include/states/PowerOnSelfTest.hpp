@@ -12,8 +12,8 @@ class PowerOnSelfTest : public Singleton<PowerOnSelfTest>, public SystemXState
 {
 	friend class Singleton<PowerOnSelfTest>;
 public:
-	virtual void SelftestFailed(EmbeddedSystemX* esx);
-	virtual void SelftestOK(EmbeddedSystemX* esx);
+	virtual void SelftestFailed(EmbeddedSystemX* s, int ErrorNo);
+	virtual void SelftestOk(EmbeddedSystemX* e);
 
 	virtual void entry();
 

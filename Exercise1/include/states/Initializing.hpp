@@ -14,7 +14,7 @@ class Initializing : public Singleton<Initializing>, public SystemXState
 {
 	friend class Singleton<Initializing>;
 public:
-	virtual void Initialized();
+	virtual void Initialized(EmbeddedSystemX* e);
 	virtual void entry();
 private:
 	void startInitializing();

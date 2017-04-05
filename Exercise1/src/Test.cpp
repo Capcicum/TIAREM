@@ -12,5 +12,31 @@
 
 int main()
 {
+	EmbeddedSystemX* emb = new EmbeddedSystemX();
+
+	emb->SelftestFailed(1);
+	emb->Restart();
+	emb->SelftestOk();
+	emb->Initialized();
+	emb->Configure();
+	emb->ConfigX();
+	emb->ConfigurationEnded();
+	emb->Start();
+	emb->eventX();
+	emb->chMode();
+	emb->eventX();
+	emb->eventY();
+	emb->chMode();
+	emb->eventX();
+	emb->chMode();
+	emb->Suspend();
+	emb->Resume();
+	emb->Suspend();
+	emb->Stop();
+	emb->Start();
+	emb->Stop();
+	emb->Start();
+	emb->Restart();
+
 	return 0;
 }

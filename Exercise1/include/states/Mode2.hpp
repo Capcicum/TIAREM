@@ -8,6 +8,20 @@
 #ifndef INCLUDE_STATES_MODE2_HPP_
 #define INCLUDE_STATES_MODE2_HPP_
 
+#include<states/RealTimeLoop.hpp>
+
+class Mode2 : public Singleton<Mode2>, public RealTimeLoop
+{
+	friend class Singleton<Mode2>;
+public:
+	virtual void chMode(EmbeddedSystemX* e);
+	virtual void entry();
+	virtual void eventX(EmbeddedSystemX* e);
+	virtual void eventY(EmbeddedSystemX* e);
+private:
+	void responseM2eventX();
+	void responseM2eventY();
+};
 
 
 

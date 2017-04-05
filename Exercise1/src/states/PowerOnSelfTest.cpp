@@ -7,20 +7,22 @@
 
 #include<states/PowerOnSelfTest.hpp>
 #include<states/Failure.hpp>
+#include<states/Initializing.hpp>
 
-void PowerOnSelfTest::SelftestFailed(EmbeddedSystemX* esx)
+void PowerOnSelfTest::SelftestFailed(EmbeddedSystemX* s, int ErrorNo)
 {
-	ChangeState(esx, Failure::get_instance());
+	ChangeState(s, Failure::get_instance());
 }
 
-void PowerOnSelfTest::SelftestOK(EmbeddedSystemX* esx)
+void PowerOnSelfTest::SelftestOk(EmbeddedSystemX* e)
 {
-	//ChangeState(t, )
+	ChangeState(e, Initializing::get_instance());
 }
 
 void PowerOnSelfTest::entry()
 {
-	std::cout << "PowerOnSelfTest State" << std::endl;
+	std::cout << "PowerOnSelfTest state entry" << std::endl;
+	systemSelftest();
 }
 
 void PowerOnSelfTest::systemSelftest()

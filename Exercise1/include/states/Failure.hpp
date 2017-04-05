@@ -15,8 +15,8 @@ class Failure : public Singleton<Failure>, public SystemXState
 {
 	friend class Singleton<Failure>;
 public:
-	virtual void Restart();
-	virtual void Exit();
+	virtual void Restart(EmbeddedSystemX* e);
+	virtual void Exit(EmbeddedSystemX* e);
 	virtual void entry();
 private:
 	void display(int ErrorNo);

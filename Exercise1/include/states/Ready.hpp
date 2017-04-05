@@ -8,14 +8,14 @@
 #ifndef INCLUDE_STATES_READY_HPP_
 #define INCLUDE_STATES_READY_HPP_
 
-#include <SystemXState.hpp>
+#include <states/Operational.hpp>
 
-class Ready : public Singleton<Ready>, public SystemXState
+class Ready : public Singleton<Ready>, public Operational
 {
 	friend class Singleton<Ready>;
 public:
-	virtual void Configure();
-	virtual void Start();
+	virtual void Configure(EmbeddedSystemX* e);
+	virtual void Start(EmbeddedSystemX* e);
 	virtual void entry();
 private:
 

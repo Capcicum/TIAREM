@@ -8,7 +8,14 @@
 #ifndef INCLUDE_STATES_REALTIMELOOP_HPP_
 #define INCLUDE_STATES_REALTIMELOOP_HPP_
 
+#include <states/Operational.hpp>
 
+class RealTimeLoop : public Operational
+{
+public:
+	virtual void Stop(EmbeddedSystemX* e);
+	virtual void Suspend(EmbeddedSystemX* e);
+};
 
 
 

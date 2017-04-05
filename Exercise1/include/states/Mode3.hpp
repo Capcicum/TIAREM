@@ -8,6 +8,18 @@
 #ifndef INCLUDE_STATES_MODE3_HPP_
 #define INCLUDE_STATES_MODE3_HPP_
 
+#include<states/RealTimeLoop.hpp>
+
+class Mode3 : public Singleton<Mode3>, public RealTimeLoop
+{
+	friend class Singleton<Mode3>;
+public:
+	virtual void chMode(EmbeddedSystemX* e);
+	virtual void entry();
+	virtual void eventX(EmbeddedSystemX* e);
+private:
+	void responseM3eventX();
+};
 
 
 

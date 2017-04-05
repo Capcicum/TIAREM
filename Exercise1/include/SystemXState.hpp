@@ -17,7 +17,7 @@ class SystemXState
 {
 public:
 
-	virtual void SelftestOk(EmbeddedSystemX* s) {};
+	virtual void SelftestOk(EmbeddedSystemX* e) {};
 	virtual void Initialized(EmbeddedSystemX* s) {};
 	virtual void Restart(EmbeddedSystemX* s) {};
 	virtual void Configure(EmbeddedSystemX* s){};
@@ -27,7 +27,7 @@ public:
 	virtual void Start(EmbeddedSystemX* s){};
 	virtual void Suspend(EmbeddedSystemX* s){};
 	virtual void Resume(EmbeddedSystemX* s){};
-	virtual void SelfTestFailed(int ErrorNo){};
+	virtual void SelftestFailed(EmbeddedSystemX* s, int ErrorNo){};
 	virtual void ConfigX(EmbeddedSystemX* s){};
 	virtual void chMode(EmbeddedSystemX* s){};
 	virtual void eventX(EmbeddedSystemX* s){};
@@ -39,7 +39,7 @@ public:
 protected:
 	SystemXState(){};
 	virtual ~SystemXState(){};
-	void ChangeState(EmbeddedSystemX* esx, SystemXState* sxs) { esx->ChangeState(sxs); };
+	void ChangeState(EmbeddedSystemX* esx, SystemXState* sxs);
 
 };
 
