@@ -8,11 +8,23 @@
 #include <Singleton.hpp>
 #include <states/PowerOnSelfTest.hpp>
 #include <states/Failure.hpp>
+#include <states/RealTimeLoop.hpp>
+#include <assert.h>
+
+class SingletonTest : public Singleton<SingletonTest>
+{
+	friend class Singleton<SingletonTest>;
+public:
+	int testVal;
+};
 
 
 int main()
 {
 	EmbeddedSystemX* emb = new EmbeddedSystemX();
+
+	SingletonTest::get_instance()->testVal = 4;
+	assert(SingletonTest::get_instance()->testVal == SingletonTest::get_instance()->testVal);
 
 	emb->SelftestFailed(1);
 	emb->Restart();
