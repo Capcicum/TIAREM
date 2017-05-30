@@ -87,10 +87,10 @@ void EmbeddedSystemX::terminateContinuousProcessing()
 
 void EmbeddedSystemX::setConProcAppStr(ApplicationStrategy* s)
 {
-	ConProc->setApplicationStrategy(s);
+	ConProc->SetApplicationStrategy(s);
 }
 
 void EmbeddedSystemX::setConProcSimRealTimeStr(SimulateRealTimeStrategy* s)
 {
-	ConProc->setSimulationRealTimeStrategy(s);
+	ConProc->SetSimulationRealTimeStrategy(s);
 }

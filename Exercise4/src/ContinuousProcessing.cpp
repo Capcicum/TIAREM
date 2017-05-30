@@ -22,33 +22,39 @@ void ContinuousProcessing::Run()
 
 std::string ContinuousProcessing::ReadInput()
 {
-	std::lock_guard<std::mutex> lock(simMux);
-	return simRealTiemStrategy->ReadInput();
+	return GetSimulateRealTimeStrategy()->ReadInput();
 }
 
 std::string ContinuousProcessing::ExecuteAlgorithm(std::string s)
 {
-	std::lock_guard<std::mutex> lock(simMux);
-	return applicationStrategy->ExecuteAlgorithm(s);
+	return GetApplicationStrategy()->ExecuteAlgorithm(s);
 }
 
 void ContinuousProcessing::OutputResult(std::string s)
 {
-	std::lock_guard<std::mutex> lock(simMux);
-	simRealTiemStrategy->OutputResult(s);
+	GetSimulateRealTimeStrategy()->OutputResult(s);
 }
 
-void ContinuousProcessing::setApplicationStrategy(ApplicationStrategy* s)
+void ContinuousProcessing::SetApplicationStrategy(ApplicationStrategy* s)
 {
-	std::lock_guard<std::mutex> lock(simMux);
+	std::lock_guard<std::mutex> lock(appMux);
 	applicationStrategy = s;
 }
 
-void ContinuousProcessing::setSimulationRealTimeStrategy(SimulateRealTimeStrategy* s)
+void ContinuousProcessing::SetSimulationRealTimeStrategy(SimulateRealTimeStrategy* s)
 {
 	std::lock_guard<std::mutex> lock(simMux);
 	simRealTiemStrategy = s;
 }
 
-
+ApplicationStrategy* ContinuousProcessing::GetApplicationStrategy()
+{
+	std::lock_guard<std::mutex> lock(appMux);
+	return applicationStrategy;
+}
+SimulateRealTimeStrategy* ContinuousProcessing::GetSimulateRealTimeStrategy()
+{
+	std::lock_guard<std::mutex> lock(simMux);
+	return simRealTiemStrategy;
+}
 

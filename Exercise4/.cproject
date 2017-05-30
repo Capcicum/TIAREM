@@ -27,6 +27,7 @@
 								<option id="gnu.cpp.compiler.option.include.paths.1364693569" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/Exercise4/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\MinGW\C++11&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\MinGW\thread&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.other.286820152" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=gnu++11 -pthread -Wl,--no-as-needed" valueType="string"/>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.1520205398" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
@@ -116,6 +117,13 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/Exercise4"/>
+		</configuration>
+		<configuration configurationName="Release">
+			<resource resourceType="PROJECT" workspacePath="/Exercise4"/>
+		</configuration>
+	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

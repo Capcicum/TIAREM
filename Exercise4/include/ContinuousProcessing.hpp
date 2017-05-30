@@ -18,12 +18,14 @@ class ContinuousProcessing : public os::Thread
 public:
 	ContinuousProcessing();
 	virtual void Run();
+	void SetApplicationStrategy(ApplicationStrategy* s);
+	void SetSimulationRealTimeStrategy(SimulateRealTimeStrategy* s);
+	ApplicationStrategy* GetApplicationStrategy();
+	SimulateRealTimeStrategy* GetSimulateRealTimeStrategy();
+private:
 	std::string ReadInput();
 	std::string ExecuteAlgorithm(std::string s);
 	void OutputResult(std::string s);
-	void setApplicationStrategy(ApplicationStrategy* s);
-	void setSimulationRealTimeStrategy(SimulateRealTimeStrategy* s);
-private:
 	std::string myString;
 	ApplicationStrategy* applicationStrategy;
 	SimulateRealTimeStrategy* simRealTiemStrategy;
